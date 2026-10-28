@@ -1,0 +1,207 @@
+/* Submit Report & Feedback Card Styles */
+.submit-layout {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.submit-header {
+  margin-bottom: 24px;
+}
+
+.submit-header h1 {
+  font-size: 1.75rem;
+  font-weight: 800;
+  color: var(--text-main);
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 6px;
+}
+
+.submit-header p {
+  color: var(--text-muted);
+  font-size: 0.95rem;
+}
+
+.submit-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-md);
+  padding: 28px;
+  margin-bottom: 30px;
+}
+
+.form-grid-2 {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+
+.map-picker-wrapper {
+  margin-bottom: 18px;
+}
+
+.map-picker-help {
+  font-size: 0.8rem;
+  color: var(--text-dim);
+  margin-top: 4px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.map-picker-container {
+  height: 260px;
+  width: 100%;
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--border-subtle);
+  overflow: hidden;
+  margin-top: 8px;
+}
+
+.severity-options {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 10px;
+  margin-top: 4px;
+}
+
+.severity-btn {
+  padding: 10px;
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--border-subtle);
+  background: var(--bg-input);
+  color: var(--text-muted);
+  font-weight: 700;
+  font-size: 0.85rem;
+  cursor: pointer;
+  text-align: center;
+  transition: all 0.15s ease;
+}
+
+.severity-btn.active-critical {
+  background: var(--accent-red-bg);
+  color: var(--accent-red);
+  border-color: var(--accent-red);
+}
+
+.severity-btn.active-high {
+  background: var(--accent-orange-bg);
+  color: var(--accent-orange);
+  border-color: var(--accent-orange);
+}
+
+.severity-btn.active-medium {
+  background: var(--accent-amber-bg);
+  color: var(--accent-amber);
+  border-color: var(--accent-amber);
+}
+
+.severity-btn.active-low {
+  background: var(--accent-blue-bg);
+  color: var(--accent-cyan);
+  border-color: var(--accent-blue);
+}
+
+/* Post-Submission Feedback Card */
+.feedback-card {
+  background: linear-gradient(180deg, #121c2e 0%, var(--bg-card) 100%);
+  border: 2px solid var(--accent-blue);
+  border-radius: var(--radius-lg);
+  padding: 28px;
+  margin-top: 24px;
+  box-shadow: var(--shadow-md), var(--shadow-glow-blue);
+  animation: slideUp 0.3s ease-out;
+}
+
+@keyframes slideUp {
+  from { opacity: 0; transform: translateY(12px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.feedback-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid var(--border-subtle);
+  padding-bottom: 16px;
+  margin-bottom: 20px;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.feedback-title-group {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.feedback-icon {
+  width: 44px;
+  height: 44px;
+  border-radius: 10px;
+  background: rgba(59, 130, 246, 0.2);
+  color: var(--accent-blue);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.feedback-details-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+  margin-bottom: 20px;
+}
+
+.feedback-item {
+  background: var(--bg-input);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-sm);
+  padding: 14px;
+}
+
+.feedback-item-label {
+  font-size: 0.75rem;
+  color: var(--text-dim);
+  text-transform: uppercase;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  margin-bottom: 4px;
+}
+
+.feedback-item-value {
+  font-size: 1.1rem;
+  font-weight: 800;
+  color: var(--text-main);
+}
+
+.feedback-explanation {
+  background: rgba(16, 185, 129, 0.08);
+  border: 1px solid rgba(16, 185, 129, 0.25);
+  border-radius: var(--radius-sm);
+  padding: 14px 16px;
+  color: var(--text-main);
+  font-size: 0.9rem;
+  line-height: 1.5;
+  margin-bottom: 20px;
+}
+
+.feedback-actions {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 12px;
+}
+
+@media (max-width: 768px) {
+  .form-grid-2 {
+    grid-template-columns: 1fr;
+  }
+  .severity-options {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .feedback-details-grid {
+    grid-template-columns: 1fr;
+  }
+}
