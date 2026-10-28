@@ -47,8 +47,13 @@
   gap: 6px;
 }
 
+.brand-title {
+  color: #FFFFFF;
+  font-weight: 800;
+}
+
 .brand-title span {
-  color: var(--accent-blue);
+  color: #3B82F6;
 }
 
 .brand-badge {
@@ -76,19 +81,22 @@
   border-radius: var(--radius-sm);
   font-size: 0.875rem;
   font-weight: 600;
-  color: var(--text-muted);
-  transition: all 0.15s ease;
+  color: #64748B;
+  background: transparent;
+  border: 1px solid transparent;
+  transition: all 0.2s ease;
 }
 
 .nav-link:hover {
-  color: var(--text-main);
-  background: var(--bg-card-elevated);
+  color: #2563EB;
+  background: #F1F5F9;
 }
 
 .nav-link.active {
-  color: #ffffff;
-  background: rgba(59, 130, 246, 0.2);
-  border: 1px solid rgba(59, 130, 246, 0.4);
+  color: #2563EB;
+  background: #EFF6FF;
+  border: 1px solid #BFDBFE;
+  font-weight: 700;
 }
 
 .navbar-right {
@@ -113,8 +121,8 @@
   width: 8px;
   height: 8px;
   border-radius: 50%;
-  background: var(--accent-green);
-  box-shadow: 0 0 8px var(--accent-green);
+  background: #FFFFFF;
+  border-bottom: 1px solid #E2E8F0;
 }
 
 @media (max-width: 768px) {

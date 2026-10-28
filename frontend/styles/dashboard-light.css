@@ -58,11 +58,11 @@
   font-size: 1.2rem;
   font-weight: 800;
   letter-spacing: -0.02em;
-  color: #ffffff;
+  color: #FFFFFF;
 }
 
 .sidebar-brand-title span {
-  color: #38bdf8;
+  color: #3B82F6;
 }
 
 .sidebar-brand-tagline {
@@ -698,4 +698,7 @@
   .dash-content-body {
     padding: 16px;
   }
+}
+.sidebar-brand-title {
+  color: #FFFFFF !important;
 }

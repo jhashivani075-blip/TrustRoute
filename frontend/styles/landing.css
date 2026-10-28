@@ -55,8 +55,8 @@
 }
 
 .mission-banner {
-  background: linear-gradient(180deg, rgba(22, 32, 52, 0.7) 0%, rgba(16, 23, 38, 0.95) 100%);
-  border: 1px solid var(--border-subtle);
+  background: #FFFFFF;
+  border: 1px solid #DCE5F0;
   border-radius: var(--radius-lg);
   padding: 30px;
   max-width: 980px;
@@ -69,7 +69,7 @@
 }
 
 .mission-icon {
-  background: rgba(59, 130, 246, 0.15);
+  background: #E8F1FF;
   color: var(--accent-blue);
   width: 56px;
   height: 56px;
@@ -85,12 +85,12 @@
   font-size: 1.1rem;
   font-weight: 700;
   margin-bottom: 6px;
-  color: var(--text-main);
+  color: #172B4D;
 }
 
 .mission-text p {
   font-size: 0.925rem;
-  color: var(--text-muted);
+  color: #526581;
   line-height: 1.6;
 }
 
