@@ -1,0 +1,170 @@
+:root {
+  --background: #ffffff;
+  --foreground: #171717;
+  --primary: #2563eb;
+  --primary-hover: #1d4ed8;
+  --border: #e2e8f0;
+  --muted: #64748b;
+}
+
+html,
+body {
+  max-width: 100vw;
+  overflow-x: hidden;
+}
+
+body {
+  color: var(--foreground);
+  background: var(--background);
+  font-family: Arial, Helvetica, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+/* Merge & Split Reports */
+.merge-split-section {
+  width: 100%;
+  margin-top: 24px;
+  padding: 24px;
+  background: #ffffff;
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  box-shadow: 0 4px 14px rgba(15, 23, 42, 0.05);
+}
+
+.merge-split-section h2 {
+  margin-bottom: 8px;
+  color: #0f172a;
+  font-size: 20px;
+  font-weight: 700;
+}
+
+.merge-split-section p {
+  margin-bottom: 12px;
+  color: var(--muted);
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+.merge-split-controls {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 12px;
+  margin-top: 16px;
+}
+
+.merge-split-controls select,
+.merge-split-controls input,
+.merge-split-controls textarea {
+  width: 100%;
+  min-width: 0;
+  padding: 12px 14px;
+  color: #0f172a;
+  background: #f8fafc;
+  border: 1px solid #cbd5e1;
+  border-radius: 10px;
+  font-family: inherit;
+  font-size: 14px;
+  outline: none;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.merge-split-controls select:focus,
+.merge-split-controls input:focus,
+.merge-split-controls textarea:focus {
+  border-color: var(--primary);
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.12);
+}
+
+.merge-split-controls textarea {
+  min-height: 100px;
+  resize: vertical;
+}
+
+.merge-split-controls button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 11px 18px;
+  border: none;
+  border-radius: 10px;
+  background: var(--primary);
+  color: #ffffff;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s, transform 0.2s;
+}
+
+.merge-split-controls button:hover {
+  background: var(--primary-hover);
+  transform: translateY(-1px);
+}
+
+.merge-split-controls button:disabled {
+  opacity: 0.55;
+  cursor: not-allowed;
+  transform: none;
+}
+
+.merge-split-controls .split-button {
+  background: #ea580c;
+}
+
+.merge-split-controls .split-button:hover {
+  background: #c2410c;
+}
+
+/* Related incidents */
+.related-incidents {
+  margin-top: 20px;
+  padding: 16px;
+  background: #eff6ff;
+  border: 1px solid #bfdbfe;
+  border-radius: 12px;
+}
+
+.related-incidents h3 {
+  margin-bottom: 10px;
+  color: #1e40af;
+  font-size: 15px;
+}
+
+.related-incidents a {
+  color: #1d4ed8;
+  font-weight: 600;
+}
+
+.related-incidents a:hover {
+  text-decoration: underline;
+}
+
+/* Mobile responsive layout */
+@media (max-width: 640px) {
+  .merge-split-section {
+    padding: 16px;
+    border-radius: 12px;
+  }
+
+  .merge-split-controls {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .merge-split-controls button {
+    width: 100%;
+  }
+}

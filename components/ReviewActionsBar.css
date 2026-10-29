@@ -1,0 +1,72 @@
+.review-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+}
+
+.review-action-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 9px;
+    min-height: 43px;
+    padding: 11px 16px;
+    border: 1px solid transparent;
+    border-radius: 9px;
+    font-family: inherit;
+    font-size: 12px;
+    font-weight: 700;
+    cursor: pointer;
+    transition:
+        background-color 0.2s ease,
+        border-color 0.2s ease,
+        transform 0.2s ease;
+}
+
+.review-action-btn:hover {
+    transform: translateY(-1px);
+}
+
+.review-action-btn:focus-visible {
+    outline: 3px solid #9bc4ff;
+    outline-offset: 3px;
+}
+
+.approve-btn {
+    color: #fff;
+    background: #18794e;
+}
+
+.approve-btn:hover {
+    background: #12643f;
+}
+
+.request-info-btn {
+    color: #245ba6;
+    background: #edf4ff;
+    border-color: #d4e4fc;
+}
+
+.request-info-btn:hover {
+    background: #e0ecff;
+}
+
+.reject-btn {
+    color: #b33d42;
+    background: #fff;
+    border-color: #f0caca;
+}
+
+.reject-btn:hover {
+    background: #fff1f1;
+}
+
+@media (max-width: 600px) {
+    .review-actions {
+        flex-direction: column;
+    }
+
+    .review-action-btn {
+        width: 100%;
+    }
+}

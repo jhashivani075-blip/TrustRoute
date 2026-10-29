@@ -1,0 +1,170 @@
+.mini-map-card {
+    padding: 23px;
+    background: #fff;
+    border: 1px solid #e3eaf3;
+    border-radius: 14px;
+}
+
+.mini-map-heading {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 19px;
+    color: #3568b3;
+}
+
+.mini-map-heading h2 {
+    margin: 0;
+    color: #172b4d;
+    font-size: 18px;
+}
+
+.mini-map-heading p {
+    margin: 7px 0 0;
+    color: #7c8ba0;
+    font-size: 12px;
+}
+
+.mini-map-visual {
+    position: relative;
+    height: 245px;
+    overflow: hidden;
+    border: 1px solid #dce6e5;
+    border-radius: 11px;
+    background-color: #edf3ed;
+    background-image: radial-gradient(#d3e0d5 1px, transparent 1px);
+    background-size: 17px 17px;
+}
+
+.map-road {
+    position: absolute;
+    background: #fff;
+    border: 1px solid #dce4df;
+}
+
+.map-road-one {
+    top: 45%;
+    left: -10%;
+    width: 125%;
+    height: 27px;
+    transform: rotate(-13deg);
+}
+
+.map-road-two {
+    top: -20%;
+    left: 53%;
+    width: 24px;
+    height: 145%;
+    transform: rotate(16deg);
+}
+
+.map-road-three {
+    top: 8%;
+    left: -5%;
+    width: 115%;
+    height: 15px;
+    transform: rotate(24deg);
+}
+
+.map-block {
+    position: absolute;
+    background: #d9e9d9;
+    border: 1px solid #c8dccb;
+    border-radius: 5px;
+}
+
+.map-block-one {
+    top: 15%;
+    left: 12%;
+    width: 22%;
+    height: 18%;
+}
+
+.map-block-two {
+    right: 10%;
+    top: 18%;
+    width: 20%;
+    height: 16%;
+}
+
+.map-block-three {
+    left: 10%;
+    bottom: 10%;
+    width: 24%;
+    height: 18%;
+}
+
+.map-block-four {
+    right: 12%;
+    bottom: 12%;
+    width: 21%;
+    height: 19%;
+}
+
+.map-marker {
+    position: absolute;
+    top: 42%;
+    left: 50%;
+    z-index: 2;
+    color: #d94747;
+    filter: drop-shadow(0 3px 4px rgba(30, 50, 70, 0.2));
+    transform: translate(-50%, -100%);
+}
+
+.map-label {
+    position: absolute;
+    z-index: 3;
+    top: 46%;
+    left: 50%;
+    padding: 7px 10px;
+    color: #fff;
+    background: #203d65;
+    border-radius: 6px;
+    font-size: 10px;
+    white-space: nowrap;
+    transform: translateX(-50%);
+}
+
+.map-label-small {
+    position: absolute;
+    color: #68816c;
+    font-size: 9px;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+}
+
+.map-label-north {
+    top: 8%;
+    left: 8%;
+}
+
+.map-label-south {
+    right: 5%;
+    bottom: 6%;
+}
+
+.map-footer {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-top: 14px;
+    color: #78889d;
+    font-size: 11px;
+    line-height: 1.6;
+}
+
+.map-footer svg {
+    flex-shrink: 0;
+    color: #5279ad;
+}
+
+@media (max-width: 600px) {
+    .mini-map-card {
+        padding: 17px;
+    }
+
+    .mini-map-visual {
+        height: 210px;
+    }
+}
