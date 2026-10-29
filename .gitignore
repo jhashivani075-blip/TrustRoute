@@ -1,7 +1,42 @@
+# Dependencies
+/node_modules
 node_modules/
-.next/
+/.pnp
+.pnp.js
+.yarn/install-state.gz
+
+# Next.js
+/.next/
+/.next/
+/out/
 out/
+
+# Build output
+/build
+/coverage
+
+# Environment variables and secrets
 .env
+.env.*
+!.env.example
+!.env*.example
+
+# Local environment files
 .env.local
 .env.*.local
-!.env.example
+
+# Vercel
+.vercel
+
+# Miscellaneous
+.DS_Store
+*.pem
+
+# Debug logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# TypeScript
+*.tsbuildinfo
+next-env.d.ts
