@@ -4,13 +4,13 @@ import React, { use } from 'react';
 import Link from 'next/link';
 import dynamic from 'next/dynamic';
 import { ArrowLeft, MapPin, Clock, ShieldAlert, Layers } from 'lucide-react';
-import ReportTimeline from '@/components/ReportTimeline';
-import ScoreBreakdown from '@/components/ScoreBreakdown';
-import FlagsPanel from '@/components/FlagsPanel';
-import AdvisoryComparison from '@/components/AdvisoryComparison';
-import ReviewActionsBar from '@/components/ReviewActionsBar';
-import { useIncidentsStore } from '@/lib/store';
-import '@/styles/incident-detail.css';
+import ReportTimeline from '../../../components/ReportTimeline';
+import ScoreBreakdown from '../../../components/ScoreBreakdown';
+import FlagsPanel from '../../../components/FlagsPanel';
+import AdvisoryComparison from '../../../components/AdvisoryComparison';
+import ReviewActionsBar from '../../../components/ReviewActionsBar';
+import { useIncidentsStore } from '../../../lib/store';
+import '../../../styles/incident-detail.css';
 
 // Dynamic Leaflet map without SSR
 const InteractiveMap = dynamic(() => import('@/components/InteractiveMap'), {
