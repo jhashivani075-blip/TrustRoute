@@ -1,6 +1,6 @@
 'use client';
 
-import React, { use } from 'react';
+import React from 'react';
 import Link from 'next/link';
 import dynamic from 'next/dynamic';
 import { ArrowLeft, MapPin, Clock, ShieldAlert, Layers } from 'lucide-react';
@@ -33,8 +33,7 @@ const InteractiveMap = dynamic(() => import('../../../components/InteractiveMap'
 
 export default function IncidentDetailPage({ params }) {
   // In Next.js 16, params is a Promise in client components
-  const resolvedParams = use(params);
-  const incidentId = resolvedParams.id;
+  const incidentId = params.id;
 
   const {
     incidents,
