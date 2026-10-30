@@ -13,7 +13,7 @@ import { useIncidentsStore } from '../../../lib/store';
 import '../../../styles/incident-detail.css';
 
 // Dynamic Leaflet map without SSR
-const InteractiveMap = dynamic(() => import('@/components/InteractiveMap'), {
+const InteractiveMap = dynamic(() => import InteractiveMap from '../../../components/InteractiveMap'; {
   ssr: false,
   loading: () => (
     <div style={{
