@@ -1,5 +1,6 @@
 'use client';
 
+import { fetchIncidents, submitIncidentReview } from './api';
 import { useState, useEffect } from 'react';
 import { INITIAL_INCIDENTS, INITIAL_AUDIT_LOGS, INITIAL_ADVISORIES } from './mock-data';
 import { calculateFreshness, computeClusterScore } from './scoring';
@@ -281,40 +282,78 @@ export function useIncidentsStore() {
   const [isLoaded, setIsLoaded] = useState(false);
 
   useEffect(() => {
-    setIncidents(getStoredIncidents());
-    setAudits(getStoredAudits());
-    setIsLoaded(true);
-  }, []);
+  let cancelled = false;
+
+  async function loadIncidents() {
+    try {
+      const data = await fetchIncidents();
+
+      if (!cancelled && data && Array.isArray(data.items)) {
+        setIncidents(data.items);
+      } else if (!cancelled) {
+        setIncidents(getStoredIncidents());
+      }
+    } catch (error) {
+      console.error('Failed to load incidents from backend:', error);
+
+      if (!cancelled) {
+        setIncidents(getStoredIncidents());
+      }
+    } finally {
+      if (!cancelled) {
+        setAudits(getStoredAudits());
+        setIsLoaded(true);
+      }
+    }
+  }
+
+  loadIncidents();
+
+  return () => {
+    cancelled = true;
+  };
+}, []);
 
   const refresh = () => {
     setIncidents(getStoredIncidents());
     setAudits(getStoredAudits());
   };
 
-  const updateIncidentStatus = (incidentId, action, notes, reviewerName = 'Duty Coordinator') => {
-    const list = getStoredIncidents();
-    const incident = list.find((i) => i.id === incidentId);
-    if (!incident) return;
-
-    if (action === 'CONFIRM') incident.status = 'REVIEWED';
-    else if (action === 'NEEDS_VERIFICATION') incident.status = 'NEEDS_VERIFICATION';
-    else if (action === 'RESOLVE') incident.status = 'RESOLVED';
-    else if (action === 'SPLIT') incident.status = 'PENDING';
-
-    saveStoredIncidents(list);
-
-    const auditList = getStoredAudits();
-    auditList.unshift({
-      id: `aud-${Date.now().toString().slice(-5)}`,
-      incident_id: incidentId,
-      reviewer: reviewerName,
-      action,
-      notes: notes || `Action ${action} executed by ${reviewerName}`,
-      created_at: new Date().toISOString(),
-    });
-    saveStoredAudits(auditList);
-    refresh();
+  const updateIncidentStatus = async (
+  incidentId,
+  action,
+  notes,
+  reviewerName = 'Duty Coordinator'
+) => {
+  const actionMap = {
+    CONFIRM: 'CONFIRM',
+    NEEDS_VERIFICATION: 'NEEDS_VERIFICATION',
+    RESOLVE: 'RESOLVE',
+    SPLIT: 'SPLIT',
   };
+
+  const backendAction = actionMap[action];
+
+  if (!backendAction) {
+    throw new Error(`Unsupported action: ${action}`);
+  }
+
+  try {
+    const result = await submitIncidentReview(incidentId, {
+      action: backendAction,
+      notes: notes || '',
+      reviewer: reviewerName,
+    });
+
+    // Refresh only after the backend request succeeds.
+    await refresh();
+
+    return result;
+  } catch (error) {
+    console.error('Failed to submit incident review:', error);
+    throw error;
+  }
+};
 
   const dismissFlag = (incidentId, flagId, reason, reviewerName = 'Duty Coordinator') => {
     const list = getStoredIncidents();
