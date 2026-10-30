@@ -4,11 +4,11 @@ import React from 'react';
 import Link from 'next/link';
 import dynamic from 'next/dynamic';
 import { ArrowRight, MapPin, RefreshCw, PlusCircle, ShieldAlert } from 'lucide-react';
-import StatCards from '@/components/StatCards';
-import DashboardCharts from '@/components/DashboardCharts';
-import IncidentsTable from '@/components/IncidentsTable';
-import { useIncidentsStore } from '@/lib/store';
-import '@/styles/dashboard.css';
+import StatCards from '../../components/StatCards';
+import DashboardCharts from '../../components/DashboardCharts';
+import IncidentsTable from '../../components/IncidentsTable';
+import { useIncidentsStore } from '../../lib/store';
+import '../../styles/dashboard.css';
 
 // Dynamic Leaflet map without SSR
 const InteractiveMap = dynamic(() => import('@/components/InteractiveMap'), {
