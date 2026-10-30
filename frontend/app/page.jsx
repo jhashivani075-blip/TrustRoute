@@ -13,8 +13,8 @@ import {
   Sliders,
   ChevronRight,
 } from 'lucide-react';
-import '@/styles/landing.css';
-import { useIncidentsStore } from '@/lib/store';
+import '../styles/landing.css';
+import { useIncidentsStore } from '../lib/store';
 
 export default function LandingPage() {
   const { incidents, isLoaded } = useIncidentsStore();
