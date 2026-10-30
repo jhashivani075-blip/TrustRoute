@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useState } from 'react';
+import React from 'react';
 import Link from 'next/link';
 import { ListFilter, UploadCloud, PlusCircle } from 'lucide-react';
 import IncidentsTable from '../../components/IncidentsTable';
