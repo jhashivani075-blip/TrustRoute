@@ -3,11 +3,11 @@
 import React, { useState } from 'react';
 import Link from 'next/link';
 import { ListFilter, UploadCloud, PlusCircle } from 'lucide-react';
-import IncidentsTable from '@/components/IncidentsTable';
-import IncidentFilters from '@/components/IncidentFilters';
-import BulkUploadModal from '@/components/BulkUploadModal';
-import { useIncidentsStore } from '@/lib/store';
-import '@/styles/incidents.css';
+import IncidentsTable from '../../components/IncidentsTable';
+import IncidentFilters from '../../components/IncidentFilters';
+import BulkUploadModal from '../../components/BulkUploadModal';
+import { useIncidentsStore } from '../../lib/store';
+import '../../styles/incidents.css';
 
 export default function IncidentsQueuePage() {
   const { incidents, refresh } = useIncidentsStore();
