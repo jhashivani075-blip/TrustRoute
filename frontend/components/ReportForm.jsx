@@ -3,10 +3,10 @@
 import React, { useState } from 'react';
 import dynamic from 'next/dynamic';
 import { Send, MapPin, Link as LinkIcon, AlertCircle } from 'lucide-react';
-import { submitReport } from '@/lib/api';
+import { submitReport } from '../lib/api';
 
 // Dynamic Leaflet map without SSR
-const InteractiveMap = dynamic(() => import('@/components/InteractiveMap'), {
+const InteractiveMap = dynamic(() => import('../../../components/InteractiveMap'), {
   ssr: false,
   loading: () => (
     <div style={{ height: '260px', background: 'var(--bg-input)', display: 'flex', alignItems: 'center', justifyContent: 'center', color: 'var(--text-dim)', border: '1px solid var(--border-subtle)', borderRadius: '6px' }}>

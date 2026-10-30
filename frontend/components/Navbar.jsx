@@ -4,7 +4,7 @@ import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { ShieldAlert, LayoutDashboard, ListFilter, PlusCircle, Activity, Radio } from 'lucide-react';
-import '@/styles/navbar.css';
+import '../styles/navbar.css';
 
 export default function Navbar() {
   const pathname = usePathname();

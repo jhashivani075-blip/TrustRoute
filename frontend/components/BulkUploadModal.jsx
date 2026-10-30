@@ -2,7 +2,7 @@
 
 import React, { useState } from 'react';
 import { UploadCloud, X, CheckCircle2, FileText } from 'lucide-react';
-import { submitReportLocally } from '@/lib/store';
+import { submitReportLocally } from '../lib/store';
 
 export default function BulkUploadModal({ isOpen, onClose, onUploadComplete }) {
   const [csvText, setCsvText] = useState('');
