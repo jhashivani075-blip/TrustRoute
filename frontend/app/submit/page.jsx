@@ -2,9 +2,9 @@
 
 import React, { useState } from 'react';
 import { PlusCircle, Info, ShieldCheck } from 'lucide-react';
-import ReportForm from '@/components/ReportForm';
-import SubmissionFeedbackCard from '@/components/SubmissionFeedbackCard';
-import '@/styles/submit.css';
+import ReportForm from '../../components/ReportForm';
+import SubmissionFeedbackCard from '../../components/SubmissionFeedbackCard';
+import '../../styles/submit.css';
 
 export default function SubmitReportPage() {
   const [submissionResult, setSubmissionResult] = useState(null);
