@@ -125,7 +125,7 @@
   border-bottom: 1px solid #E2E8F0;
 }
 
-@media (max-width: 768px) {
+@media(max-width: 768px) {
   .navbar-inner {
     height: auto;
     padding: 12px 0;
@@ -134,5 +134,19 @@
   }
   .telemetry-status {
     display: none;
+  }
+}
+@media (max-width: 768px) {
+  .navbar-nav {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    width: 100%;
+  }
+
+  .nav-link {
+    padding: 7px 9px;
+    font-size: 0.75rem;
+    gap: 5px;
   }
 }

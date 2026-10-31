@@ -32,7 +32,6 @@ const InteractiveMap = dynamic(() => import('../../../components/InteractiveMap'
 });
 
 export default function IncidentDetailPage({ params }) {
-  // In Next.js 16, params is a Promise in client components
   const incidentId = params.id;
 
   const {
@@ -66,6 +65,9 @@ export default function IncidentDetailPage({ params }) {
   const hasConflict = (incident.flags || []).some(
     (f) => f.state === 'ACTIVE' && f.code.includes('CONFLICT')
   );
+
+console.log('Incident data:', incident);
+console.log('Incident ID:', incidentId);
 
   return (
     <div>
